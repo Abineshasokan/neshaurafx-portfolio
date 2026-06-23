@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Optimization -->
+  <title>NESHAURAFX V5.0 | Premium Social Media Video Editor & Creative Studio</title>
+  <meta name="description" content="NeshAuraFx helps YouTubers, creators, and brands transform raw footage into premium high-retention content. Specializing in Reels, Shorts, Vlogs, and Cinematic edits.">
+  <meta name="keywords" content="video editor, social media editing, youtube editor, reels editor, tiktok editor, vlog editor, motion graphics, abinesh asokan, neshaurafx">
+  <meta name="author" content="Abinesh Asokan">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="loading">
+
+  <!-- Ambient Cinematic Overlays -->
+  <div class="ambient-overlay"></div>
+  <div class="noise-layer"></div>
+  
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" id="js-scroll-progress"></div>
+
+  <!-- Custom Magnetic Cursor -->
+  <div class="custom-cursor" id="js-cursor"></div>
+  <div class="custom-cursor-follower" id="js-cursor-follower"></div>
+
+  <!-- Three.js 3D Background Canvas -->
+  <canvas id="webgl-canvas"></canvas>
+
+  <!-- Preloader Screen -->
+  <div class="preloader" id="js-preloader">
+    <div class="preloader-content">
+      <div class="preloader-title" style="font-family: var(--font-headings); font-weight: 700; font-size: 26px; letter-spacing: 4px; text-align: center; margin-bottom: 10px; color: #ffffff;">
+        NESHAURA<span style="color: var(--color-accent);">FX</span>
+      </div>
+      <div class="preloader-visual">
+        <div class="preloader-spinner"></div>
+      </div>
+      <div class="preloader-terminal" id="js-preloader-terminal">
+        <!-- Logs dynamically written by JS -->
+      </div>
+      <div class="preloader-bar-container">
+        <div class="preloader-bar" id="js-preloader-bar"></div>
+      </div>
+      <div class="preloader-percentage" id="js-preloader-percentage">0%</div>
+    </div>
+  </div>
+
+  <!-- Navigation Header -->
+  <header id="js-header">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        NESHAURA<span>FX</span>
+      </a>
+      <nav class="nav-menu">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#showreel" class="nav-link">Showreel</a>
+        <a href="#why-me" class="nav-link">Value</a>
+        <a href="#work" class="nav-link">Work</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#process" class="nav-link">Process</a>
+        <a href="#testimonials" class="nav-link">Feedback</a>
+        <a href="#about" class="nav-link">About</a>
+      </nav>
+      <a href="#contact" class="btn-secondary nav-btn js-magnetic">Start Project</a>
+      <div class="nav-toggle" id="js-nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Wrap -->
+  <main id="js-scroll-content">
+
+    <!-- SECTION 1: HERO -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>I don't just edit videos.<br><span class="gradient-text">I create content people watch.</span></h1>
+          <p class="hero-desc">Helping creators, brands, and businesses transform raw footage into highly engaging content that captures attention, increases retention, and drives explosive growth.</p>
+          
+          <div class="button-group">
+            <a href="#work" class="btn btn-primary js-magnetic">
+              🚀 View My Work
+              <svg class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary js-magnetic">
+              📩 Start A Project
+            </a>
+          </div>
+
+          <div class="hero-trust-indicators">
+            <div class="trust-indicator">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              Instagram Reels
+            </div>
+            <div class="trust-indicator">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              YouTube Shorts
+            </div>
+            <div class="trust-indicator">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              Long Form Videos
+            </div>
+            <div class="trust-indicator">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              Vlogs & Cinematic
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: TRUST BAR -->
+    <section class="trust-bar" id="trust-bar">
+      <div class="trust-bar-title">Trusted By Creators, Brands & Growing Businesses</div>
+      <div class="marquee-container">
+        <div class="marquee-track">
+          <div class="marquee-item">Content Creators</div>
+          <div class="marquee-item">YouTubers</div>
+          <div class="marquee-item">Podcasters</div>
+          
+          <div class="marquee-item">Content Creators</div>
+          <div class="marquee-item">YouTubers</div>
+          <div class="marquee-item">Podcasters</div>
+
+          <div class="marquee-item">Content Creators</div>
+          <div class="marquee-item">YouTubers</div>
+          <div class="marquee-item">Podcasters</div>
+
+          <div class="marquee-item">Content Creators</div>
+          <div class="marquee-item">YouTubers</div>
+          <div class="marquee-item">Podcasters</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: CINEMATIC SHOWREEL -->
+    <section class="showreel" id="showreel">
+      <div class="container">
+        <div class="section-label">01 / Showreel</div>
+        <h2 class="section-title">See what your content<br><span class="gradient-text">can become</span></h2>
+        <p class="section-desc">Every project is edited with a single hyper-focused goal: keeping viewers hooked and engaged from the very first frame to the final second.</p>
+        
+        <div class="showreel-layout">
+          <!-- Custom Premium Player -->
+          <div class="player-wrapper" id="js-player-wrapper">
+            <video class="player-video" id="js-showreel-video" loop playsinline poster="assets/showreel_thumbnail.png">
+              <source src="https://assets.mixkit.co/videos/preview/mixkit-neon-light-from-a-tunnel-in-a-futuristic-city-34471-large.mp4" type="video/mp4">
+            </video>
+            <div class="player-overlay" id="js-player-overlay">
+              <a href="https://www.instagram.com/jeeva.xae/reel/DW1KIUJilPt/?hl=en" target="_blank" class="play-trigger js-magnetic" id="js-play-trigger">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </a>
+              <div class="player-caption">Play Showreel on Instagram ↗</div>
+            </div>
+            
+            <div class="player-controls">
+              <button class="mini-play-btn" id="js-mini-play-btn">
+                <svg viewBox="0 0 24 24"><path id="js-play-icon-path" d="M8 5v14l11-7z"/></svg>
+              </button>
+              <div class="timeline-slider-container" id="js-timeline-container">
+                <div class="timeline-progress" id="js-timeline-progress"></div>
+              </div>
+              <button class="volume-btn" id="js-volume-btn">
+                <svg viewBox="0 0 24 24">
+                  <path id="js-volume-icon-path" d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Video Sequence Steps -->
+          <div class="showreel-timeline">
+            <div class="timeline-step active" data-time="0">
+              <span class="step-num">00:00 - 00:05</span>
+              <div class="step-label">Instagram Reels</div>
+            </div>
+            <div class="timeline-step" data-time="5">
+              <span class="step-num">00:05 - 00:10</span>
+              <div class="step-label">YouTube Shorts</div>
+            </div>
+            <div class="timeline-step" data-time="10">
+              <span class="step-num">00:10 - 00:15</span>
+              <div class="step-label">Creator Content</div>
+            </div>
+            <div class="timeline-step" data-time="15">
+              <span class="step-num">00:15 - 00:20</span>
+              <div class="step-label">Travel Vlogs</div>
+            </div>
+            <div class="timeline-step" data-time="20">
+              <span class="step-num">00:20 - 00:25</span>
+              <div class="step-label">Gaming Edit</div>
+            </div>
+            <div class="timeline-step" data-time="25">
+              <span class="step-num">00:25 - 00:30</span>
+              <div class="step-label">Motion Graphics</div>
+            </div>
+            <div class="timeline-step" data-time="30">
+              <span class="step-num">00:30 - 00:35</span>
+              <div class="step-label">Cinematic Showcase</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: WHY CLIENTS HIRE ME -->
+    <section class="why-me" id="why-me">
+      <div class="container">
+        <div class="section-label">02 / Strategic Value</div>
+        <h2 class="section-title">Editing that<br><span class="gradient-text">delivers results</span></h2>
+        <p class="section-desc">We combine audience psychology with world-class video production to construct visuals that command attention and drive conversions.</p>
+
+        <div class="why-grid">
+          <!-- Card 1 -->
+          <div class="why-card">
+            <span class="card-num">SYSTEM // 01</span>
+            <h3>Higher Viewer Retention</h3>
+            <p>Strategic pacing, pattern interrupts, and hook optimization designed specifically to prevent user scrolling and maintain flatline-free watch charts.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="why-card">
+            <span class="card-num">SYSTEM // 02</span>
+            <h3>Professional Storytelling</h3>
+            <p>Every edit is structured carefully around a solid narrative arc, converting dry explanations or random clips into compelling, memorable visual adventures.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="why-card">
+            <span class="card-num">SYSTEM // 03</span>
+            <h3>Premium Visual Quality</h3>
+            <p>High-end color grading, custom-designed motion graphics, immersive sound design, and clean visual assets that elevate the premium status of your brand.</p>
+          </div>
+          <!-- Card 4 -->
+          <div class="why-card">
+            <span class="card-num">SYSTEM // 04</span>
+            <h3>Social Media Optimized</h3>
+            <p>Built and exported specifically for algorithms on YouTube, Instagram, and TikTok, aligning with contemporary trends and optimal format ratios.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: FEATURED WORK -->
+    <section class="work" id="work">
+      <div class="container">
+        <div class="section-label">03 / Selected Works</div>
+        <h2 class="section-title">Featured<br><span class="gradient-text">Projects</span></h2>
+        <p class="section-desc">A curated selection of edits showing precision, visual flair, and engagement-driven structure.</p>
+
+        <div class="work-grid">
+          <!-- Project 1: Commercial Edit -->
+          <div class="work-card js-tilt">
+            <div class="work-card-inner">
+              <div class="work-media-container">
+                <video class="work-video" loop muted playsinline poster="assets/commercial_thumbnail.png">
+                  <source src="https://assets.mixkit.co/videos/preview/mixkit-creative-workplace-of-a-designer-or-video-editor-41617-large.mp4" type="video/mp4">
+                </video>
+                <div class="card-play-badge">
+                  <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+              <div class="work-meta">
+                <span class="work-cat">Commercial Edit</span>
+                <h3>Brand Commercial Promo</h3>
+                <p>High-end commercial promo combining motion graphic overlays, B-roll structuring, and professional audio compression to build brand authority.</p>
+                <div class="work-details">
+                  <span class="work-detail-tag">BRAND PROMO</span>
+                  <span class="work-detail-tag">B-ROLL SETUP</span>
+                  <span class="work-detail-tag">AUDIO MIX</span>
+                </div>
+                <a href="https://drive.google.com/file/d/126Aam9_vREWGz10xPdPJarY_S2Dl4DLo/view?usp=sharing" target="_blank" class="btn btn-secondary js-magnetic" style="padding: 10px 20px; font-size: 11px; width: 100%; margin-top: 20px;">
+                  Watch Full Edit ↗
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Travel Vlog -->
+          <div class="work-card js-tilt">
+            <div class="work-card-inner">
+              <div class="work-media-container">
+                <video class="work-video" loop muted playsinline poster="assets/travel_thumbnail.png">
+                  <source src="https://assets.mixkit.co/videos/preview/mixkit-cinematic-shot-of-mountains-under-fog-42200-large.mp4" type="video/mp4">
+                </video>
+                <div class="card-play-badge">
+                  <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+              <div class="work-meta">
+                <span class="work-cat">Vlog Editing</span>
+                <h3>Kinetic Travel Reel</h3>
+                <p>Fast-paced vertical travel vlog edit optimized with energetic transitions, synced audio beats, and custom captions for high retention.</p>
+                <div class="work-details">
+                  <span class="work-detail-tag">VERTICAL VLOG</span>
+                  <span class="work-detail-tag">KINETIC TRANSITIONS</span>
+                  <span class="work-detail-tag">REELS FORMAT</span>
+                </div>
+                <a href="https://drive.google.com/file/d/1D7JHrNf1NuY-IMA3AAxHSxcUNUKobGUo/view?usp=sharing" target="_blank" class="btn btn-secondary js-magnetic" style="padding: 10px 20px; font-size: 11px; width: 100%; margin-top: 20px;">
+                  Watch Full Edit ↗
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Cinematic Edit -->
+          <div class="work-card js-tilt">
+            <div class="work-card-inner">
+              <div class="work-media-container">
+                <video class="work-video" loop muted playsinline poster="assets/bmw_thumbnail.png">
+                  <source src="https://assets.mixkit.co/videos/preview/mixkit-cinematic-shot-of-a-moody-forest-42202-large.mp4" type="video/mp4">
+                </video>
+                <div class="card-play-badge">
+                  <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+              <div class="work-meta">
+                <span class="work-cat">Cinematic Showcase</span>
+                <h3>BMW Cinematic Showcase</h3>
+                <p>Automotive cinematic video edit featuring dramatic color grading, precise speed ramps, atmospheric sound design, and custom visual flows.</p>
+                <div class="work-details">
+                  <span class="work-detail-tag">CAR CINEMATIC</span>
+                  <span class="work-detail-tag">SPEED RAMPS</span>
+                  <span class="work-detail-tag">COLOR GRADE</span>
+                </div>
+                <a href="https://drive.google.com/file/d/1BXrj4kXqxEpNMkXhNJtXDecWjCgI-z13/view?usp=sharing" target="_blank" class="btn btn-secondary js-magnetic" style="padding: 10px 20px; font-size: 11px; width: 100%; margin-top: 20px;">
+                  Watch Full Edit ↗
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Event Edit -->
+          <div class="work-card js-tilt">
+            <div class="work-card-inner">
+              <div class="work-media-container">
+                <video class="work-video" loop muted playsinline poster="assets/event_thumbnail.png">
+                  <source src="https://assets.mixkit.co/videos/preview/mixkit-pink-neon-laser-beams-in-a-dark-hallway-34473-large.mp4" type="video/mp4">
+                </video>
+                <div class="card-play-badge">
+                  <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+              <div class="work-meta">
+                <span class="work-cat">Event Edit</span>
+                <h3>Event Highlights Recap</h3>
+                <p>Dynamic coverage highlights recap of live events, capturing crowds, energy, and key activities synchronized with electronic background beats.</p>
+                <div class="work-details">
+                  <span class="work-detail-tag">EVENT HIGHLIGHTS</span>
+                  <span class="work-detail-tag">BEAT SYNC</span>
+                  <span class="work-detail-tag">LIGHT LEAKS</span>
+                </div>
+                <a href="https://drive.google.com/file/d/17OTB1NKwt9mMHUAKLPEB5FaWYtWijPGr/view?usp=sharing" target="_blank" class="btn btn-secondary js-magnetic" style="padding: 10px 20px; font-size: 11px; width: 100%; margin-top: 20px;">
+                  Watch Full Edit ↗
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: SERVICES -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-label">04 / Capabilities</div>
+        <h2 class="section-title">What I do for<br><span class="gradient-text">Your Brand</span></h2>
+        <p class="section-desc">Tailored production packages built to scale your audience base and represent premium status across channels.</p>
+
+        <div class="services-grid">
+          <!-- Service 1 -->
+          <div class="service-card">
+            <span class="service-num">SERVICE // 01</span>
+            <h3>Short Form Content</h3>
+            <p class="service-perfect">Perfect For: <span>Instagram Reels, YouTube Shorts, TikTok</span></p>
+            <ul class="service-inclusions">
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Captions & Text Hook
+              </li>
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Motion Graphics
+              </li>
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Vibrant SFX
+              </li>
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Hook Optimization
+              </li>
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Viral Pacing Cut
+              </li>
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Retention Tuning
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-card">
+            <span class="service-num">SERVICE // 02</span>
+            <h3>Long Form Content</h3>
+            <p class="service-perfect">Perfect For: <span>YouTube Videos, Podcasts, Talking Head</span></p>
+            <ul class="service-inclusions">
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Professional Editing
+              </li>
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                B-Roll Integration
+              </li>
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Story Structuring
+              </li>
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Audio Enhancement
+              </li>
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Retention Engineering
+              </li>
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Zoom Enhancements
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-card">
+            <span class="service-num">SERVICE // 03</span>
+            <h3>Vlog Editing</h3>
+            <p class="service-perfect">Perfect For: <span>Travel Vlogs, Lifestyle, Daily Vlogs</span></p>
+            <ul class="service-inclusions">
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Cinematic Transitions
+              </li>
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Music Synchronization
+              </li>
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Vlog Storytelling
+              </li>
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Dynamic Pacing
+              </li>
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                LUT & Color Grade
+              </li>
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Ambient Sound Mixing
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="service-card">
+            <span class="service-num">SERVICE // 04</span>
+            <h3>Cinematic Editing</h3>
+            <p class="service-perfect">Perfect For: <span>Brand Films, Promos, Special Edits</span></p>
+            <ul class="service-inclusions">
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Premium Color Grading
+              </li>
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Cinematic Sound Design
+              </li>
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Motion Graphics
+              </li>
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Visual FX Transitions
+              </li>
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Pacing Control
+              </li>
+              <li class="service-inc-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Atmospheric LUTs
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: CLIENT PROCESS -->
+    <section class="process" id="process">
+      <div class="container">
+        <div class="section-label">05 / The Workflow</div>
+        <h2 class="section-title">Simple Process.<br><span class="gradient-text">Professional Results.</span></h2>
+        <p class="section-desc">How we collaborate from the raw source files to a polished, high-performing output.</p>
+
+        <div class="process-layout">
+          <!-- Connecting Line -->
+          <div class="process-line">
+            <div class="process-line-progress" id="js-process-progress"></div>
+          </div>
+
+          <!-- Step 1 -->
+          <div class="process-step js-process-step">
+            <div class="process-step-node">01</div>
+            <div class="process-step-content">
+              <h3>Send Your Footage</h3>
+              <p>Share your raw recording links (Drive, Dropbox, Frame.io) along with your styling references, platform specifications, and core content goals.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-step js-process-step">
+            <div class="process-step-node">02</div>
+            <div class="process-step-content">
+              <h3>Creative Planning</h3>
+              <p>We analyze your footage structure and construct a tailored engagement roadmap, planning hooks, text placements, sound patterns, and narrative flow.</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-step js-process-step">
+            <div class="process-step-node">03</div>
+            <div class="process-step-content">
+              <h3>Editing & Enhancement</h3>
+              <p>The magic happens. Footage is assembled, paced, color graded, and injected with custom transitions, typography, SFX, and graphics.</p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="process-step js-process-step">
+            <div class="process-step-node">04</div>
+            <div class="process-step-content">
+              <h3>Review & Revisions</h3>
+              <p>Review the draft on a collaborative frame-sharing app, provide feedback, and we polish up the visual details until the clip is absolutely perfect.</p>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="process-step js-process-step">
+            <div class="process-step-node">05</div>
+            <div class="process-step-content">
+              <h3>Final Delivery</h3>
+              <p>Get your export files in platform-native optimized codecs and sizes, complete with caption scripts and title cues, ready to publish and capture views.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-label">06 / Reputation</div>
+        <h2 class="section-title">Client<br><span class="gradient-text">Feedback</span></h2>
+        <p class="section-desc">What content creators, brand leads, and entrepreneurs say about working with NeshAuraFx.</p>
+
+        <div class="testimonials-grid">
+          <!-- Card 1 -->
+          <div class="testimonial-card js-tilt">
+            <div class="quote-icon">“</div>
+            <p class="quote-text">Professional communication and excellent editing quality. Abinesh understood my requirements instantly and helped boost my Instagram video reach and engagement significantly.</p>
+            <div class="client-info">
+              <div class="client-avatar">G</div>
+              <div>
+                <div class="client-name">Gayathri</div>
+                <div class="client-role">Instagram Content Creator</div>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="testimonial-card js-tilt">
+            <div class="quote-icon">“</div>
+            <p class="quote-text">Collaborating with Abinesh has been fantastic. His speed, technical knowledge of After Effects, and attention to detail are top-notch. Highly recommended editor!</p>
+            <div class="client-info">
+              <div class="client-avatar">R</div>
+              <div>
+                <div class="client-name">Ragul</div>
+                <div class="client-role">Video Editor</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="testimonial-card js-tilt">
+            <div class="quote-icon">“</div>
+            <p class="quote-text">His understanding of pacing and custom visual effects is incredible. He always brings fresh, creative perspectives to every collaborative project we tackle.</p>
+            <div class="client-info">
+              <div class="client-avatar">V</div>
+              <div>
+                <div class="client-name">Vikram</div>
+                <div class="client-role">Video Editor</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: ABOUT ME -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="grid-2">
+          <!-- Portrait Left -->
+          <div class="about-image-wrapper">
+            <img class="about-image" src="assets/portrait.jpeg" alt="Abinesh Asokan Portrait">
+          </div>
+          
+          <!-- Content Right -->
+          <div class="about-content">
+            <div class="section-label">07 / The Founder</div>
+            <h2 class="section-title">Hi, I'm Abinesh.</h2>
+            <h3>Founder of NeshAuraFx</h3>
+            <p>I am a freelance video editor and motion designer specializing in high-performance social media formats, cinematic vlogs, and brand campaigns.</p>
+            <p>My editing approach combines advanced pacing structures, visual storytelling, psychological pattern interrupts, and custom audio layers to capture and hold modern digital attention spans.</p>
+            
+            <div class="about-mission">
+              <div class="about-mission-title">Core Mission</div>
+              <p class="about-mission-text">"Editing content people watch and remember."</p>
+            </div>
+
+            <!-- Software Used Section -->
+            <div class="about-software" style="margin-top: 40px;">
+              <div class="about-software-title" style="font-family: var(--font-headings); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--color-accent); margin-bottom: 20px;">Visual Arsenal</div>
+              <div class="software-grid" style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <!-- DaVinci Resolve -->
+                <div class="software-badge primary" style="background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.2); padding: 10px 18px; border-radius: 4px; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+                  <span style="width: 8px; height: 8px; border-radius: 50%; background-color: #ef4444; box-shadow: 0 0 10px #ef4444;"></span>
+                  <span style="font-family: var(--font-headings); font-weight: 600; font-size: 12px; letter-spacing: 0.5px; color: #ffffff;">DaVinci Resolve (Primary)</span>
+                </div>
+                <!-- After Effects -->
+                <div class="software-badge" style="background: rgba(139, 92, 246, 0.05); border: 1px solid rgba(139, 92, 246, 0.2); padding: 10px 18px; border-radius: 4px; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+                  <span style="width: 8px; height: 8px; border-radius: 50%; background-color: #8b5cf6; box-shadow: 0 0 10px #8b5cf6;"></span>
+                  <span style="font-family: var(--font-headings); font-weight: 600; font-size: 12px; letter-spacing: 0.5px; color: #ffffff;">After Effects</span>
+                </div>
+                <!-- CapCut -->
+                <div class="software-badge" style="background: rgba(0, 229, 255, 0.05); border: 1px solid rgba(0, 229, 255, 0.2); padding: 10px 18px; border-radius: 4px; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+                  <span style="width: 8px; height: 8px; border-radius: 50%; background-color: #00e5ff; box-shadow: 0 0 10px #00e5ff;"></span>
+                  <span style="font-family: var(--font-headings); font-weight: 600; font-size: 12px; letter-spacing: 0.5px; color: #ffffff;">CapCut</span>
+                </div>
+                <!-- Canva -->
+                <div class="software-badge" style="background: rgba(0, 196, 204, 0.05); border: 1px solid rgba(0, 196, 204, 0.2); padding: 10px 18px; border-radius: 4px; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+                  <span style="width: 8px; height: 8px; border-radius: 50%; background-color: #00c4cc; box-shadow: 0 0 10px #00c4cc;"></span>
+                  <span style="font-family: var(--font-headings); font-weight: 600; font-size: 12px; letter-spacing: 0.5px; color: #ffffff;">Canva</span>
+                </div>
+                <!-- Photoshop -->
+                <div class="software-badge" style="background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); padding: 10px 18px; border-radius: 4px; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+                  <span style="width: 8px; height: 8px; border-radius: 50%; background-color: #3b82f6;"></span>
+                  <span style="font-family: var(--font-headings); font-weight: 600; font-size: 12px; letter-spacing: 0.5px; color: #ffffff;">Photoshop (Minimal)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 10: FINAL CTA -->
+    <section class="final-cta" id="contact">
+      <div class="container">
+        <div class="final-cta-grid">
+          <!-- Left: Info Column -->
+          <div class="final-cta-info">
+            <div class="section-label">08 / Join Forces</div>
+            <h2>Ready to elevate<br><span class="gradient-text">your content?</span></h2>
+            <p class="final-cta-desc">Whether you need vertical loops for reels, YouTube talking head cuts, travel vlogs, or raw cinematic commercials, let's create something unforgettable.</p>
+            
+            <div class="contact-channels">
+              <a href="https://instagram.com/neshaura_fx" target="_blank" class="contact-link instagram js-magnetic">
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                Instagram
+              </a>
+              <a href="https://wa.me/919342601198" target="_blank" class="contact-link whatsapp js-magnetic">
+                <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.197 1.451 4.819 1.452 5.485 0 9.95-4.46 9.954-9.952.002-2.66-1.019-5.162-2.87-7.019C16.643 1.777 14.143.757 11.48.756c-5.492 0-9.958 4.465-9.962 9.958-.002 2.032.531 4.015 1.547 5.736L1.933 20.89l4.714-1.236zM17.476 14.3c-.3-.149-1.772-.875-2.045-.974-.273-.1-.472-.149-.672.15-.2.298-.772.974-.946 1.172-.174.199-.348.224-.648.075-.3-.15-1.266-.467-2.41-1.485-.89-.793-1.49-1.773-1.665-2.072-.174-.3-.019-.462.13-.611.135-.133.3-.349.45-.523.15-.174.2-.299.3-.499.1-.2.05-.375-.025-.524-.075-.15-.672-1.62-.922-2.22-.243-.585-.489-.507-.672-.516-.174-.008-.373-.01-.572-.01-.2 0-.524.075-.798.374-.273.3-1.046 1.023-1.046 2.493s1.07 2.89 1.22 3.09c.15.199 2.107 3.216 5.105 4.51.713.308 1.27.492 1.704.63.717.227 1.37.195 1.885.118.574-.085 1.772-.724 2.02-.1422.25-.698.25-1.297 0-.149-.075-.249-.273-.399-.572-.549z"/></svg>
+                WhatsApp
+              </a>
+              <a href="mailto:abineshabinesh46406@gmail.com" class="contact-link email js-magnetic">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                abineshabinesh46406@gmail.com
+              </a>
+            </div>
+
+            <!-- QR Code -->
+            <div class="contact-qr" style="margin-top: 30px; display: flex; align-items: center; gap: 20px; text-align: left;">
+              <div style="width: 80px; height: 80px; border-radius: 6px; overflow: hidden; border: var(--border-glass); background: #ffffff; padding: 6px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-premium);">
+                <img src="assets/qr_code.png" alt="Instagram QR Code" style="width: 100%; height: 100%; object-fit: contain;">
+              </div>
+              <p style="font-family: var(--font-headings); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--color-text-muted); margin: 0; max-width: 180px; line-height: 1.4;">Scan QR to Follow on Instagram</p>
+            </div>
+          </div>
+
+          <!-- Right: Glass Contact Form -->
+          <div class="final-cta-form">
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="glass-form">
+              <!-- Web3Forms Config -->
+              <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+              <input type="hidden" name="subject" value="New Project Inquiry - NeshAuraFx">
+              <input type="hidden" name="from_name" value="NeshAuraFx Portfolio Contact Form">
+              
+              <div class="form-group">
+                <label for="form-name">Full Name</label>
+                <input type="text" id="form-name" name="name" placeholder="John Doe" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-email">Email Address</label>
+                <input type="email" id="form-email" name="email" placeholder="john@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-service">Project Type</label>
+                <select id="form-service" name="service" required>
+                  <option value="" disabled selected>Select a service...</option>
+                  <option value="High-Energy Event Highlight">High-Energy Event Highlight</option>
+                  <option value="Moody Narrative Edit">Moody Narrative Edit</option>
+                  <option value="Brand Promotion Campaign">Brand Promotion Campaign</option>
+                  <option value="Adventure Travel Vlog">Adventure Travel Vlog</option>
+                  <option value="Other / Custom Editing">Other / Custom Editing</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="form-message">Project Details</label>
+                <textarea id="form-message" name="message" rows="4" placeholder="Tell me about your footage, goals, timeline..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary js-magnetic" style="width: 100%; padding: 14px 28px; margin-top: 10px; border-radius: 4px;">
+                📩 Let's Work Together
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        © 2026 NESHAURAFX. ALL RIGHTS RESERVED. FOUNDED BY ABINESH ASOKAN.
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- CDNs for WebGL and Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+
+  <!-- Core JavaScript -->
+  <script src="main.js"></script>
+</body>
+</html>
